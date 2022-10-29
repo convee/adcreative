@@ -1,0 +1,220 @@
+@host=localhost:9999
+
+###添加媒体账号
+POST http://{{host}}/api/publisher_account/add
+Accept: application/json
+Content-Type: application/json
+appid: YZ123
+secret: 66C5DFCE-3C16-46F3-A15B-6F948BBE3C3S
+sign: 06dd4ef97465c2c056d5296d148b9ff9
+timestamp: 1632910606
+
+{
+  "dsp_id": "1234",
+  "token": "xxx",
+  "publisher_id": 6,
+  "is_rsync_advertiser": 1,
+  "callback_url": "http://convee3.com"
+}
+
+### 创意送审（腾讯）
+POST http://{{host}}/api/creative/upload
+Accept: application/json
+Content-Type: application/json
+appid: YZ123
+secret: 48646DF6-BCB6-4F13-AFE5-02E19482E61E
+sign: c849b5408261548b309c0e9901bf9b19
+timestamp: 1657776723
+
+{"material":[{"advertiser_id":26,"position":"Tencent_Mobile_QQ_TinyWorld_Horizontal_Dynamic","creative_id":"40901032","media_info":"测试专用_品牌","industry":"","advertiser_name":"广告主-测试","name":"手机QQ-小世界-横版视频闪屏 ","template_id":"1","info":[{"attr_name":"video","attr_value":"http://mat.convee.cn/media/tencent/2022/06/1656571467847650.mp4"},{"attr_name":"image1","attr_value":"http://mat.convee.cn/image/tencent/2022/06/1656571487450182.jpg"},{"attr_name":"abstract","attr_value":"广告文案啊阿啊"},{"attr_name":"LogoName","attr_value":"brand"},{"attr_name":"image2","attr_value":"http://mat.convee.cn/image/tencent/2022/06/1656571509341740.jpg"},{"attr_name":"button","attr_value":"butto"}],"land_url":"http://landing.com","deeplink_url":"","start_date":"2022-06-30","end_date":"2022-07-20","monitor":[{"t":0,"url":"http://pv1.com"},{"t":2,"url":"http://pv2.com"},{"t":2,"url":"http://pv3.com"},{"t":0,"url":"http://pv4.com"},{"t":0,"url":"http://v2sandbox.convee.cn/count/run.php?var=${EXT}"}],"cm":["http://clcck.com","http://sandbox.v2.convee.cn/click/run.php?var=${EXT}"],"vm":[],"action":1,"mini_program_id":"","mini_program_path":""},{"advertiser_id":26,"position":"Tencent_Mobile_QQ_TinyWorld_Vertical_Dynamic","creative_id":"40901033","media_info":"广平视频功能测试专用_品牌","industry":"","advertiser_name":"广告主-测试","name":"手机QQ-小世界-竖版视频闪屏 ","template_id":"1","info":[{"attr_name":"video","attr_value":"http://mat.convee.cn/media/tencent/2022/06/1656571555644604.mp4"},{"attr_name":"image1","attr_value":"http://mat.convee.cn/image/tencent/2022/06/1656571547596834.jpg"},{"attr_name":"abstract","attr_value":"titllt"},{"attr_name":"LogoName","attr_value":"brand"},{"attr_name":"image2","attr_value":"http://mat.convee.cn/image/tencent/2022/06/1656571565264185.jpg"},{"attr_name":"button","attr_value":"butt"}],"land_url":"http://landing.com","deeplink_url":"","start_date":"2022-06-30","end_date":"2022-07-20","monitor":[{"t":0,"url":"http://pv1.com"},{"t":0,"url":"http://pv2.com"},{"t":2,"url":"http://pv3.com"},{"t":2,"url":"http://pv4.com"},{"t":0,"url":"http://v2sandbox.convee.cn/count/run.php?var=${EXT}"}],"cm":["http://clcck.com","http://sandbox.v2.convee.cn/click/run.php?var=${EXT}"],"vm":[],"action":1,"mini_program_id":"","mini_program_path":""},{"advertiser_id":26,"position":"Tencent_Video_Splash_Dynamic_huadongJiaohu","creative_id":"40901034","media_info":"广平视频功能测试专用_品牌","industry":"","advertiser_name":"广告主-测试","name":"腾讯视频-轻互动沉浸式小logo视频闪屏-滑动Plus ","template_id":"1","info":[{"attr_name":"image","attr_value":"http://mat.convee.cn/image/tencent/2022/06/1656571829256997.jpg"},{"attr_name":"video","attr_value":"http://mat.convee.cn/media/tencent/2022/06/1656571835421960.mp4"}],"land_url":"http://landing.com","deeplink_url":"","start_date":"2022-06-30","end_date":"2022-07-20","monitor":[{"t":0,"url":"http://pv1.com"},{"t":0,"url":"http://pv2.com"},{"t":0,"url":"http://pv3.com"},{"t":0,"url":"http://pv4.com"},{"t":0,"url":"http://v2sandbox.convee.cn/count/run.php?var=${EXT}"}],"cm":["http://clcck.com","http://sandbox.v2.convee.cn/click/run.php?var=${EXT}"],"vm":[],"action":1,"mini_program_id":"","mini_program_path":""}]}
+
+
+### 创意状态查询
+POST http://{{host}}/api/creative/query
+Accept: application/json
+Content-Type: application/json
+appid: YZ123
+secret: 48646DF6-BCB6-4F13-AFE5-02E19482E61E
+sign: ea1b4623e4a0efb8a7856190c5b31517
+timestamp: 1654771220
+
+{
+  "creative_id": ["41010014","41037121"]
+}
+
+### 创意规格校验
+POST http://{{host}}/api/creative/check
+Accept: application/json
+Content-Type: application/json
+appid: YZ123
+secret: 66C5DFCE-3C16-46F3-A15B-6F948BBE3C3S
+sign: 4f1b753b6ad93a9f30a3d4cf533b191f
+timestamp: 1632910606
+
+{
+  "position": "MaiMai_Mobile_v1_Feed_Four",
+  "template_id": "1",
+  "info": [
+    {
+      "attr_name": "image1",
+      "attr_value": "https://i9.taou.com/maimai/p/30965/8351_103_S19N4S3ZdK3eVu"
+    },
+    {
+      "attr_name": "image2",
+      "attr_value": "https://i9.taou.com/maimai/p/30965/8351_103_S19N4S3ZdK3eVu"
+    }
+  ]
+}
+
+###第三方媒体列表
+GET http://{{host}}/api/publisher/list?publisher=IQIYI
+Accept: application/json
+Content-Type: application/json
+timestamp:123456789
+appid: YZ123
+secret: 66C5DFCE-3C16-46F3-A15B-6F948BBE3C3S
+sign: 06dd4ef97465c2c056d5296d148b9ff9
+
+
+###第三方广告位列表
+GET http://{{host}}/api/position/list?publisher=IQIYI&position=Sohu_Mobile_NewsStaticKaiping
+Accept: application/json
+Content-Type: application/json
+appid: YZ123
+secret: 99A47904-CA2F-47F7-9424-C3C1F41E30AF
+sign: 04b12a0a76d9eaab08b4619037b311d1
+timestamp: 1632910606
+X-Request-ID:5d661140-d2aa-47d9-9343-9cfb44b09f72
+
+
+###第三方媒体行业ID列表
+GET http://{{host}}/api/industry/list?publisher=IQIYI
+Accept: application/json
+Content-Type: application/json
+appid: YZ123
+secret: 66C5DFCE-3C16-46F3-A15B-6F948BBE3C3S
+sign: 06dd4ef97465c2c056d5296d148b9ff9
+timestamp: 1632910606
+
+
+###第三方广告主规则列表
+GET http://{{host}}/api/advertiser/rules?publisher=Fancy
+Accept: application/json
+Content-Type: application/json
+appid: YZ123
+secret: 66C5DFCE-3C16-46F3-A15B-6F948BBE3C3S
+sign: 06dd4ef97465c2c056d5296d148b9ff9
+timestamp: 1632910606
+
+
+### 广告主送审(iqiyi)
+POST http://{{host}}/api/advertiser_audit/upload
+Accept: application/json
+Content-Type: application/json
+appid: YZ123
+secret: 66C5DFCE-3C16-46F3-A15B-6F948BBE3C3S
+sign: 4f1b753b6ad93a9f30a3d4cf533b191f
+timestamp: 1632910606
+
+{
+  "publisher": "IQIYI",
+  "advertiser_name": "IQIYItest1111",
+  "advertiser_audit_info": {
+    "company_name": "测试公司",
+    "company_summary": "公司简章",
+    "website_name": "网站名称",
+    "website_address": "网站地址",
+    "website_number": "网站icp备案号",
+    "business_licenser": "营业执照注册号",
+    "authorize_state": "http://mat.convee.com/image/iqiyi/2021/09/1632472908200395.jpg",
+    "industry": "1688",
+    "qualifications": [
+      {
+        "file_name": "测试",
+        "file_url": "https://www.twle.cn/static/i/img1.jpg"
+      }
+    ]
+  }
+}
+
+
+### 广告主送审(B612)
+POST http://{{host}}/api/advertiser_audit/upload
+Accept: application/json
+Content-Type: application/json
+appid: YZ123
+secret: 66C5DFCE-3C16-46F3-A15B-6F948BBE3C3S
+sign: 4f1b753b6ad93a9f30a3d4cf533b191f
+timestamp: 1632910606
+
+{
+  "publisher": "B612",
+  "advertiser_name": "b612test",
+  "advertiser_audit_info": {
+    "company_name": "测试公司",
+    "company_summary": "公司简章",
+    "website_name": "网站名称",
+    "website_address": "网站地址",
+    "website_number": "网站icp备案号",
+    "business_licenser": "营业执照注册号",
+    "authorize_state": "http://mat.convee.com/image/iqiyi/2021/09/1632472908200395.jpg",
+    "industry": "1688",
+    "qualifications": [
+      {
+        "file_name": "测试",
+        "file_url": "https://www.twle.cn/static/i/img1.jpg"
+      },
+      {
+        "file_name": "测试1",
+        "file_url": "http://mat.convee.com/image/iqiyi/2021/09/1632473740418693.jpg"
+      }
+    ]
+  }
+}
+
+### 广告主送审(韩剧TV)
+POST http://{{host}}/api/advertiser_audit/upload
+Accept: application/json
+Content-Type: application/json
+appid: YZ123
+secret: 66C5DFCE-3C16-46F3-A15B-6F948BBE3C3S
+sign: 4f1b753b6ad93a9f30a3d4cf533b191f
+timestamp: 1632910606
+
+{
+  "publisher": "Fancy",
+  "advertiser_name": "北京泛为信息科技有限公司",
+  "advertiser_audit_info": {
+    "company_name": "",
+    "company_summary": "",
+    "website_name": "",
+    "website_address": "",
+    "website_number": "",
+    "business_licenser": "",
+    "authorize_state": "http://mat.convee.com/image/iqiyi/2021/09/1632473740418693.jpg",
+    "industry": "1010",
+    "qualifications": [
+      {
+        "file_name": "测试2",
+        "file_url": "http://mat.convee.com/image/iqiyi/2021/09/1632473740418693.jpg"
+      }
+    ]
+  }
+}
+
+### 创意状态查询
+POST http://{{host}}/api/advertiser_audit/query
+Accept: application/json
+Content-Type: application/json
+appid: YZ123
+secret: 66C5DFCE-3C16-46F3-A15B-6F948BBE3C3S
+sign: 4f1b753b6ad93a9f30a3d4cf533b191f
+timestamp: 1632910606
+
+{
+  "advertiser_id": [
+    25,26,27
+  ]
+}
+
+

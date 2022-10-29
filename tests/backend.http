@@ -1,0 +1,238 @@
+@host=localhost:9999
+
+### 用户登录信息
+GET http://{{host}}/backend/system/login_info
+Accept: application/json
+Content-Type: application/x-www-form-urlencoded
+token: a73bac4c60a525078e513053a1c942fdbd06e6f1
+oid: 1
+
+### 退出登录
+POST http://{{host}}/backend/system/logout
+Accept: application/json
+Content-Type: application/x-www-form-urlencoded
+token: 2b879d65afbe92ee7c3e7707b03a0fd7a3643628
+oid: 1
+
+### 获取九宫格
+GET http://{{host}}/backend/system/global_menu
+Accept: application/json
+Content-Type: application/x-www-form-urlencoded
+token: a73bac4c60a525078e513053a1c942fdbd06e6f1
+oid: 1
+
+### 组织列表
+GET http://{{host}}/backend/system/org_list
+Accept: application/json
+Content-Type: application/x-www-form-urlencoded
+token: a73bac4c60a525078e513053a1c942fdbd06e6f1
+oid: 1
+
+###添加客户
+### curl -X POST "http://localhost:9999/backend/customer/add" -d "name=xxx&is_private=1&creative_callback_url=111&advertiser_callback_url=333"
+POST http://{{host}}/backend/customer/add
+Accept: application/json
+Content-Type: application/x-www-form-urlencoded
+token: 2b879d65afbe92ee7c3e7707b03a0fd7a3643628
+
+name=多触点&is_private=0&creative_callback_url=111&advertiser_callback_url=333
+
+###编辑客户
+### curl -X POST "http://localhost:9999/backend/customer/edit" -d "name=xxx&is_private=1&creative_callback_url=111&advertiser_callback_url=333"
+POST http://{{host}}/backend/customer/edit
+Accept: application/json
+Content-Type: application/x-www-form-urlencoded
+token: 2b879d65afbe92ee7c3e7707b03a0fd7a3643628
+
+id=10030&name=客户3&is_private=1&creative_callback_url=111&advertiser_callback_url=333
+
+### 删除客户
+
+POST http://{{host}}/backend/customer/delete
+Accept: application/json
+Content-Type: application/x-www-form-urlencoded
+token: 2b879d65afbe92ee7c3e7707b03a0fd7a3643628
+
+id=16
+
+###客户列表
+GET http://{{host}}/backend/customer/list?page=1&per_page=20
+Accept: application/json
+
+###添加媒体账号
+### curl -X POST "http://localhost:9999/backend/customer/add" -d "name=xxx&is_private=1"
+POST http://{{host}}/backend/publisher_account/add
+Accept: application/json
+Content-Type: application/x-www-form-urlencoded
+token: 2b879d65afbe92ee7c3e7707b03a0fd7a3643628
+
+dsp_id=123&token=xxx&customer_id=14&publisher_id=1&is_rsync_advertiser=0&callback_url=http://convee.com&remark=12
+
+###编辑媒体账号
+### curl -X POST "http://localhost:9999/backend/customer/edit" -d "name=xxx&is_private=1"
+POST http://{{host}}/backend/publisher_account/edit
+Accept: application/json
+Content-Type: application/x-www-form-urlencoded
+token: 2b879d65afbe92ee7c3e7707b03a0fd7a3643628
+
+id=11&dsp_id=123&token=xxx&customer_id=1&publisher_id=1000&is_rsync_advertiser=0&callback_url=http://convee1.com
+
+### 删除媒体账号
+
+POST http://{{host}}/backend/publisher_account/delete
+Accept: application/json
+Content-Type: application/x-www-form-urlencoded
+token: 2b879d65afbe92ee7c3e7707b03a0fd7a3643628
+
+id=16
+
+###媒体账号列表
+GET http://{{host}}/backend/publisher_account/list?page=1&per_page=20
+Accept: application/json
+
+
+###添加媒体
+### curl -X POST "http://localhost:9999/backend/publisher/add" -d "name=xxx&is_private=1"
+POST http://{{host}}/backend/publisher/add
+Accept: application/json
+Content-Type: application/x-www-form-urlencoded
+token: 2b879d65afbe92ee7c3e7707b03a0fd7a3643628
+
+name=媒体测试&is_rsync_advertiser=0&is_rsync_creative=0&is_publisher_cdn=1&is_creative_bind=0&monitor_code_change_need_rsync=0&landing_change_need_rsync=0&monitor_position_change_need_rsync=0&s2s_state_info=测试&pub_return_info=测试返回&advertiser_urls=&creative_urls=
+
+###编辑媒体
+### curl -X POST "http://localhost:9999/backend/publisher/edit" -d "name=xxx&is_private=1"
+POST http://{{host}}/backend/publisher/edit
+Accept: application/json
+Content-Type: application/x-www-form-urlencoded
+token: 2b879d65afbe92ee7c3e7707b03a0fd7a3643628
+
+id=16&name=媒体测试&is_rsync_advertiser=0&is_rsync_creative=0&is_publisher_cdn=1&is_creative_bind=0&monitor_code_change_need_rsync=0&landing_change_need_rsync=0&monitor_position_change_need_rsync=0&s2s_state_info=测试&pub_return_info=测试返回&advertiser_urls=&creative_urls=
+
+### 删除媒体
+
+POST http://{{host}}/backend/publisher/delete
+Accept: application/json
+Content-Type: application/x-www-form-urlencoded
+token: 2b879d65afbe92ee7c3e7707b03a0fd7a3643628
+
+id=2
+
+###媒体列表
+GET http://{{host}}/backend/publisher/list?page=1&per_page=20
+Accept: application/json
+
+
+###添加广告位
+### curl -X POST "http://localhost:9999/backend/position/add" -d "name=xxx&is_private=1"
+POST http://{{host}}/backend/position/add
+Accept: application/json
+Content-Type: application/x-www-form-urlencoded
+token: 2b879d65afbe92ee7c3e7707b03a0fd7a3643628
+oid: 1
+
+publisher_id=1&name=腾讯广告位&type=display&position=KuaiShou_Mobile_v1_IF_Main_Single_test7&material_info=123&media_type=mobile&ad_format=0&is_support_deeplink=1&landing_change_need_rsync=1&monitor_code_change_need_rsync=1&monitor_position_change_need_rsync=0&is_creative_bind=1
+
+###编辑广告位
+### curl -X POST "http://localhost:9999/backend/position/edit" -d "name=xxx&is_private=1"
+POST http://{{host}}/backend/position/edit
+Accept: application/json
+Content-Type: application/x-www-form-urlencoded
+token: 2b879d65afbe92ee7c3e7707b03a0fd7a3643628
+
+id=154&publisher_id=1&name=腾讯广告位&type=display&position=KuaiShou_Mobile_v1_IF_Main_Single&material_info=123&media_type=mobile&ad_format=0&is_support_deeplink=1&landing_change_need_rsync=1&monitor_code_change_need_rsync=1&monitor_position_change_need_rsync=0&is_creative_bind=1
+
+### 删除广告位
+
+POST http://{{host}}/backend/position/delete
+Accept: application/json
+Content-Type: application/x-www-form-urlencoded
+token: 2b879d65afbe92ee7c3e7707b03a0fd7a3643628
+
+id=192
+
+###广告位列表
+GET http://{{host}}/backend/position/list?page=1&per_page=20
+Accept: application/json
+token: 2b879d65afbe92ee7c3e7707b03a0fd7a3643628
+
+###添加广告主
+### curl -X POST "http://localhost:9999/backend/advertiser/add" -d "name=xxx&is_private=1"
+POST http://{{host}}/backend/advertiser/add
+Accept: application/json
+Content-Type: application/x-www-form-urlencoded
+token: 2b879d65afbe92ee7c3e7707b03a0fd7a3643628
+
+name=腾讯&info=123&customer_id=1
+
+###编辑广告主
+### curl -X POST "http://localhost:9999/backend/advertiser/edit" -d "name=xxx&is_private=1"
+POST http://{{host}}/backend/advertiser/edit
+Accept: application/json
+Content-Type: application/x-www-form-urlencoded
+token: 2b879d65afbe92ee7c3e7707b03a0fd7a3643628
+
+id=6&name=腾讯编辑&info=123&customer_id=1
+
+### 删除广告主
+
+POST http://{{host}}/backend/advertiser/delete
+Accept: application/json
+Content-Type: application/x-www-form-urlencoded
+token: 2b879d65afbe92ee7c3e7707b03a0fd7a3643628
+
+id=4
+
+###广告主列表
+GET http://{{host}}/backend/advertiser/list?page=1&per_page=20
+Accept: application/json
+
+
+###添加广告主规则
+### curl -X POST "http://localhost:9999/backend/advertiser_rules/add" -d "name=xxx&is_private=1"
+POST http://{{host}}/backend/advertiser_rules/add
+Accept: application/json
+Content-Type: application/x-www-form-urlencoded
+token: 2b879d65afbe92ee7c3e7707b03a0fd7a3643628
+
+publisher_id=1&info=123
+
+###编辑广告主规则
+### curl -X POST "http://localhost:9999/backend/advertiser_rules/edit" -d "name=xxx&is_private=1"
+POST http://{{host}}/backend/advertiser_rules/edit
+Accept: application/json
+Content-Type: application/x-www-form-urlencoded
+token: 2b879d65afbe92ee7c3e7707b03a0fd7a3643628
+
+id=2&publisher_id=1&info=编辑
+
+### 删除广告主规则
+
+POST http://{{host}}/backend/advertiser_rules/delete
+Accept: application/json
+Content-Type: application/x-www-form-urlencoded
+token: 2b879d65afbe92ee7c3e7707b03a0fd7a3643628
+
+id=4
+
+###广告主规则列表
+GET http://{{host}}/backend/advertiser_rules/list?page=1&per_page=20
+Accept: application/json
+token: 2b879d65afbe92ee7c3e7707b03a0fd7a3643628
+
+
+###广告主送审记录列表
+GET http://{{host}}/backend/advertiser_audit/list?page=1&per_page=20
+Accept: application/json
+token: 2b879d65afbe92ee7c3e7707b03a0fd7a3643628
+
+###创意记录列表
+GET http://{{host}}/backend/creative/list?page=1&per_page=20
+Accept: application/json
+token: 2b879d65afbe92ee7c3e7707b03a0fd7a3643628
+
+###创意记录列表
+GET http://{{host}}/backend/creative/upload?puid=1&cids=471,472
+Accept: application/json
+token: 2b879d65afbe92ee7c3e7707b03a0fd7a3643628
+
