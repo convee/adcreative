@@ -85,19 +85,6 @@ nohup ./adcreative dev.yml &
 - 媒体送审任务
 - 管理后台
 
-## 数据表设计
-- [数据表设计](docs/database.md)
-
-## 接口文档
-
-- [第三方接口文档](docs/openapi.md)
-- [后台接口文档](docs/backend.md)
-
-## 媒体对接文档
-- [腾讯](https://wiki.adx.qq.com/)
-- [网易新闻](http://api.nex.163.com/doc.html)
-- [UC](https://tanx-media-systest.taobao.com/debugger/readme)
-
 ## 开发规范
 
 遵循: [Uber Go 语言编码规范](https://github.com/uber-go/guide/blob/master/style.md)
@@ -129,3 +116,16 @@ redirect_stderr = true
 stdout_logfile = /data/modules/adcreative/supervisor.log
 
 ```
+
+## 数据库说明
+- [数据表设计](docs/database.md)
+
+## 接口文档
+
+- [第三方接口文档](docs/openapi.md)
+- [后台接口文档](docs/backend.md)
+
+## 媒体对接文档
+- [腾讯](https://wiki.adx.qq.com/)
+- [网易新闻](http://api.nex.163.com/doc.html)
+- [UC](https://tanx-media-systest.taobao.com/debugger/readme)
