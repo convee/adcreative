@@ -1,7 +1,6 @@
 .idea
 go.sum
 logs/*
-adcreative*
 profile
 .vscode
 configs/*local.yml
