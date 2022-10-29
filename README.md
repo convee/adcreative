@@ -15,6 +15,7 @@
 - 使用 make 来管理 Go 工程
 - 使用 shell(startup.sh) 脚本来管理进程
 - 使用 YAML 文件进行多环境配置
+- 使用 Ide 自带 [REST Client](https://www.jetbrains.com/help/idea/http-client-in-product-code-editor.html#converting-curl-requests) 工具测试 API
 - 使用 Prometheus 监控 QPS、分位耗时、送审状态分布等
 - 使用钉钉：送审不通过、送审异常告警
 
